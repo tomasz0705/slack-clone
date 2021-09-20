@@ -1,8 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { enterRoom } from '../features/appSlice';
 import { db } from '../firebase';
 
-function SidebarOption({ Icon, title, addChannelOption }) {
+function SidebarOption({ Icon, title, addChannelOption, id }) {
+    const dispatch = useDispatch();
+
     const addChannel = () => {
         const channelName = prompt("Please enter the channel name");
 
@@ -14,7 +18,11 @@ function SidebarOption({ Icon, title, addChannelOption }) {
     }
 
     const selectChannel = () => {
-        
+        if(id) {
+            dispatch(enterRoom({
+                roomId: id
+            }))
+        }
     }
 
     return (
