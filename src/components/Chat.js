@@ -11,14 +11,14 @@ import Message from './Message';
 
 function Chat() {
     const roomId = useSelector(selectRoomId);
-    const [roomDeatails] = useDocument(
+    const [roomDetails] = useDocument(
         roomId && db.collection('rooms').doc(roomId)
     )
     const [roomMessages] = useCollection(
         roomId && db.collection("rooms").doc(roomId).collection("messages").orderBy("timestamp", "asc")
     )
 
-    console.log(roomDeatails?.data());
+    console.log(roomDetails?.data());
     console.log(roomMessages);
 
     return (
@@ -27,7 +27,7 @@ function Chat() {
                 <Header>
                     <HeaderLeft>
                         <h4>
-                            <strong>#{roomDeatails?.data().name}</strong>
+                            <strong>#{roomDetails?.data().name}</strong>
                             <StarBorderOutlinedIcon />
                         </h4>
 
@@ -54,9 +54,10 @@ function Chat() {
                             />
                         );
                     })}
+                    <ChatBottom />
                 </ChatMessages>
                 <ChatInput
-                    channelName={roomDeatails?.data().name}
+                    channelName={roomDetails?.data().name}
                     channelId={roomId}
                 />
             </>
@@ -65,6 +66,10 @@ function Chat() {
 }
 
 export default Chat;
+
+const ChatBottom = styled.div`
+    padding-bottom: 200px;
+`;
 
 const Header = styled.div`
     display: flex;
