@@ -58,7 +58,10 @@ function App() {
 export default App;
 
 const AppLoading = styled.div`
-
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
 `;
 const AppLoadingContents = styled.div`
   text-align: center;
