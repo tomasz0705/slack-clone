@@ -7,7 +7,7 @@ After clicking on the user's avatar, the user logs out.
 
 To see the project demo, click on image below.
 
-[![](https://github.com/tomasz0705/slack-clone/tree/master/src/assets/slack-demo.jpg?raw=true)](https://slack-clone-eb3a4.firebaseapp.com/)
+[![](https://github.com/tomasz0705/slack-clone/blob/master/src/assets/slack-demo.jpg?raw=true)](https://slack-clone-eb3a4.firebaseapp.com/)
 
 ## Used Technologies
 - Create React App,
