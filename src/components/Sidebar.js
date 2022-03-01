@@ -25,7 +25,7 @@ function Sidebar() {
         <SidebarContainer>
             <SidebarHeader>
                 <SidebarInfo>
-                    <h2>Tommy S</h2>
+                    <h2>{user.displayName}</h2>
                     <h3>
                         <FiberManualRecordIcon />
                         Tomasz Stolarczyk
